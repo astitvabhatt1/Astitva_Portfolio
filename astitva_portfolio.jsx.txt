@@ -1,0 +1,308 @@
+import React, { useState } from 'react';
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, BarChart3, LineChart as LineChartIcon, TrendingUp, Users, Target, Award } from 'lucide-react';
+
+export default function Portfolio() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const skills = {
+    'Digital Marketing': ['Google Ads', 'Meta Ads', 'Campaign Optimization', 'CRO', 'Lead Generation', 'Google Analytics', 'Content Creation'],
+    'Data & Analytics': ['SQL', 'Excel', 'Power BI', 'Tableau', 'Data Visualization', 'Statistical Analysis', 'Dashboard Creation'],
+    'Tools & Platforms': ['Google Analytics', 'Excel', 'Canva', 'ERP Systems', 'CRM', 'GeM Portal', 'Social Media Management']
+  };
+
+  const experience = [
+    {
+      role: 'MIS Executive',
+      company: 'ANG Manpower Solutions Pvt. Ltd.',
+      location: 'Ahmedabad, Gujarat',
+      period: 'March 2026 – Present',
+      highlights: [
+        'Data collection, organization, and reporting for business decisions',
+        'Excel, SQL, ERP, and CRM system management',
+        'KPI tracking and performance analysis',
+        'Workflow optimization and cross-team coordination'
+      ]
+    },
+    {
+      role: 'Digital Marketing Executive',
+      company: 'INFOMIZER',
+      location: 'Remote',
+      period: 'Oct 2024 – May 2025',
+      highlights: [
+        '40% improvement in lead generation through optimized campaigns',
+        'Managed Google Ads and Meta Ads across multiple domains',
+        'Campaign optimization and CRO strategy implementation',
+        'Ad creative design and performance analytics'
+      ]
+    },
+    {
+      role: 'Back-End Executive',
+      company: 'Laps and Tabs Company Pvt. Ltd.',
+      location: 'Lucknow, Uttar Pradesh',
+      period: 'Jul 2025 – February 2026',
+      highlights: [
+        'High-precision data entry and record management',
+        'GeM portal monitoring and bid status tracking',
+        'Tender management and order processing',
+        'Payment tracking and operational coordination'
+      ]
+    }
+  ];
+
+  const projects = [
+    {
+      title: 'Digital Marketing Campaign Analysis',
+      period: 'Jun 2024 – Aug 2024',
+      description: 'Comprehensive campaign strategy with A/B testing, audience segmentation, and performance optimization',
+      metrics: ['40% Lead Increase', 'Lower CPL', 'Improved CTR']
+    },
+    {
+      title: 'Market Research Analysis',
+      period: 'Jul 2024 – Aug 2024',
+      description: 'In-depth market research and competitive analysis for digital marketing strategies',
+      metrics: ['Data Insights', 'Market Trends', 'Strategy Development']
+    }
+  ];
+
+  const stats = [
+    { number: '40%', label: 'Lead Generation Increase', icon: TrendingUp },
+    { number: '2+', label: 'Years Professional Experience', icon: Users },
+    { number: '10+', label: 'Core Skills Mastered', icon: Award },
+    { number: '3', label: 'Major Roles Completed', icon: Target }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      {/* Navigation */}
+      <nav className="fixed w-full top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-700">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Astitva Bhatt
+            </div>
+            
+            <div className="hidden md:flex gap-8 items-center">
+              <a href="#home" className="hover:text-blue-400 transition">Home</a>
+              <a href="#about" className="hover:text-blue-400 transition">About</a>
+              <a href="#skills" className="hover:text-blue-400 transition">Skills</a>
+              <a href="#experience" className="hover:text-blue-400 transition">Experience</a>
+              <a href="#contact" className="hover:text-blue-400 transition">Contact</a>
+            </div>
+
+            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
+              {menuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
+
+          {menuOpen && (
+            <div className="md:hidden pb-4 space-y-2">
+              <a href="#home" className="block hover:text-blue-400 py-2">Home</a>
+              <a href="#about" className="block hover:text-blue-400 py-2">About</a>
+              <a href="#skills" className="block hover:text-blue-400 py-2">Skills</a>
+              <a href="#experience" className="block hover:text-blue-400 py-2">Experience</a>
+              <a href="#contact" className="block hover:text-blue-400 py-2">Contact</a>
+            </div>
+          )}
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Data-Driven Digital <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Marketing Leader</span>
+              </h1>
+              <p className="text-xl text-slate-300 mb-4">
+                Digital Marketing Executive transitioning to Data Analytics | SaaS & FinTech Specialist | Excel, SQL, Power BI
+              </p>
+              <p className="text-slate-400 mb-8">
+                Proven track record of 40% lead generation improvement through data-driven campaigns and analytical insights. BBA in Marketing Management with hands-on experience in campaign optimization, data analysis, and business intelligence.
+              </p>
+              <div className="flex gap-4">
+                <a href="#contact" className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-lg font-semibold transition">
+                  Get In Touch
+                </a>
+                <a href="mailto:astitva.bhatt1@gmail.com" className="border border-blue-400 hover:bg-blue-400/10 px-8 py-3 rounded-lg font-semibold transition">
+                  Email Me
+                </a>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-8 border border-blue-400/30">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-3 bg-slate-800/50 rounded">
+                    <BarChart3 className="text-blue-400" size={24} />
+                    <span>Data Analytics</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-slate-800/50 rounded">
+                    <LineChartIcon className="text-cyan-400" size={24} />
+                    <span>Campaign Optimization</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-slate-800/50 rounded">
+                    <TrendingUp className="text-blue-400" size={24} />
+                    <span>Performance Marketing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 px-4 bg-slate-800/30 border-y border-slate-700">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, idx) => {
+              const Icon = stat.icon;
+              return (
+                <div key={idx} className="text-center">
+                  <Icon className="mx-auto mb-3 text-blue-400" size={32} />
+                  <div className="text-3xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-sm text-slate-400">{stat.label}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">Core Competencies</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {Object.entries(skills).map((category, idx) => (
+              <div key={idx} className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-blue-400/50 transition">
+                <h3 className="text-xl font-bold mb-4 text-blue-400">{category[0]}</h3>
+                <div className="space-y-3">
+                  {category[1].map((skill, sidx) => (
+                    <div key={sidx} className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                      <span className="text-slate-300">{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">Professional Experience</h2>
+          <div className="space-y-8">
+            {experience.map((exp, idx) => (
+              <div key={idx} className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 hover:border-blue-400/50 transition">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-blue-400 mb-1">{exp.role}</h3>
+                    <p className="text-slate-300">{exp.company} • {exp.location}</p>
+                  </div>
+                  <span className="text-slate-400 text-sm mt-2 md:mt-0">{exp.period}</span>
+                </div>
+                <ul className="space-y-2 mt-4">
+                  {exp.highlights.map((highlight, hidx) => (
+                    <li key={hidx} className="flex gap-3 text-slate-300">
+                      <span className="text-cyan-400 mt-1">→</span>
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">Projects & Case Studies</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.map((project, idx) => (
+              <div key={idx} className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-blue-400/50 transition">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-sm text-slate-400">{project.period}</p>
+                  </div>
+                </div>
+                <p className="text-slate-300 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.metrics.map((metric, midx) => (
+                    <span key={midx} className="bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm px-3 py-1 rounded">
+                      {metric}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education & Certifications */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">Education & Certifications</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-blue-400 mb-2">Education</h3>
+              <p className="font-semibold mb-1">BBA - Marketing Management and Research</p>
+              <p className="text-slate-400">Babu Banarasi Das University (BBDU), Lucknow | 2025</p>
+            </div>
+            <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-blue-400 mb-4">Certifications</h3>
+              <ul className="space-y-2">
+                <li className="text-slate-300">✓ Foundations of Digital Marketing and E-commerce</li>
+                <li className="text-slate-300">✓ Attract and Engage Customers with Digital Marketing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-y border-blue-400/30">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">Ready to Drive Data-Driven Growth?</h2>
+          <p className="text-xl text-slate-300 mb-8">Let's connect and explore how I can help your SaaS or FinTech company achieve ambitious marketing goals.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:astitva.bhatt1@gmail.com" className="bg-blue-500 hover:bg-blue-600 px-8 py-4 rounded-lg font-semibold transition flex items-center justify-center gap-2">
+              <Mail size={20} />
+              Email: astitva.bhatt1@gmail.com
+            </a>
+            <a href="tel:+918887570321" className="border border-blue-400 hover:bg-blue-400/10 px-8 py-4 rounded-lg font-semibold transition">
+              Call: +91 8887570321
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-4 bg-slate-900 border-t border-slate-700">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center gap-8 mb-8">
+            <a href="https://linkedin.com/in/astitva-bhatt-696563275" className="hover:text-blue-400 transition flex items-center gap-2">
+              <Linkedin size={20} />
+              LinkedIn
+            </a>
+            <a href="mailto:astitva.bhatt1@gmail.com" className="hover:text-blue-400 transition flex items-center gap-2">
+              <Mail size={20} />
+              Email
+            </a>
+          </div>
+          <div className="text-center text-slate-400 text-sm">
+            <p>© 2026 Astitva Bhatt. Digital Marketing Executive | Aspiring Data Analyst</p>
+            <p className="mt-2">Bangalore, India | Open to Remote Opportunities</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
