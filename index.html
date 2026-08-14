@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astitva Bhatt | Senior Digital Marketing Professional</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #003d82; --secondary: #0055cc; --accent: #0077ff; --dark-bg: #0d1117; --dark-card: #161b22; --dark-border: #21262d; --text-primary: #ffffff; --text-secondary: #8b949e; --success: #238636; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; background: #0d1117; color: var(--text-primary); line-height: 1.6; }
+        header { position: fixed; top: 0; width: 100%; background: rgba(13, 17, 23, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--dark-border); z-index: 1000; padding: 1.2rem 0; }
+        .header-content { max-width: 1400px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { font-size: 1.4rem; font-weight: 900; letter-spacing: -0.5px; color: var(--accent); }
+        nav { display: flex; gap: 3rem; }
+        nav a { color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s; }
+        nav a:hover { color: var(--accent); }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 50px; }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 120px; position: relative; }
+        .hero-content { position: relative; z-index: 1; max-width: 1000px; }
+        .hero h1 { font-size: 5.5rem; font-weight: 900; letter-spacing: -2px; line-height: 1.1; margin-bottom: 1rem; }
+        .hero h1 .accent { color: var(--accent); }
+        .hero-subtitle { font-size: 1.6rem; color: var(--text-secondary); font-weight: 500; margin-bottom: 2rem; }
+        .hero-description { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 3rem; max-width: 750px; }
+        .cta-buttons { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .btn { padding: 15px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.3s; border: none; cursor: pointer; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { transform: translateY(-3px); }
+        .btn-secondary { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+        .btn-secondary:hover { background: rgba(0, 119, 255, 0.1); transform: translateY(-3px); }
+        .metrics-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+        .metric { background: rgba(22, 27, 34, 0.6); border: 1px solid var(--dark-border); padding: 2rem; border-radius: 10px; text-align: center; }
+        .metric-value { font-size: 2.5rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
+        .metric-label { color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; }
+        section { padding: 100px 0; position: relative; }
+        .section-title { font-size: 3.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 1.5rem; }
+        .section-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin-bottom: 3rem; line-height: 1.7; }
+        .executive-summary { background: linear-gradient(135deg, rgba(0, 85, 204, 0.08) 0%, rgba(0, 119, 255, 0.08) 100%); border: 1px solid var(--dark-border); padding: 4rem; border-radius: 12px; margin-bottom: 3rem; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .summary-text h3 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--accent); }
+        .summary-text p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; }
+        .summary-bullets { list-style: none; }
+        .summary-bullets li { padding: 0.8rem 0; color: var(--text-secondary); position: relative; padding-left: 2rem; }
+        .summary-bullets li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .summary-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .summary-stat { background: rgba(22, 27, 34, 0.8); border: 1px solid var(--dark-border); padding: 1.5rem; border-radius: 8px; text-align: center; }
+        .summary-stat .value { font-size: 2rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
+        .summary-stat .label { color: var(--text-secondary); font-size: 0.9rem; font-weight: 600; }
+        .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+        .expertise-card { background: rgba(22, 27, 34, 0.6); border: 1px solid var(--dark-border); padding: 3rem 2.5rem; border-radius: 12px; transition: all 0.3s; }
+        .expertise-card:hover { border-color: var(--accent); background: rgba(22, 27, 34, 0.9); transform: translateY(-10px); }
+        .expertise-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .expertise-card h3 { font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--accent); font-weight: 800; }
+        .expertise-card ul { list-style: none; }
+        .expertise-card li { padding: 0.7rem 0; color: var(--text-secondary); font-weight: 500; position: relative; padding-left: 1.8rem; }
+        .expertise-card li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: bold; }
+        .experience-item { background: rgba(22, 27, 34, 0.6); border: 1px solid var(--dark-border); padding: 3rem; margin-bottom: 2rem; border-radius: 12px; transition: all 0.3s; }
+        .experience-item:hover { border-color: var(--accent); background: rgba(22, 27, 34, 0.9); transform: translateX(10px); }
+        .experience-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+        .experience-item h3 { font-size: 1.6rem; color: var(--accent); font-weight: 800; }
+        .experience-badge { background: rgba(0, 119, 255, 0.1); border: 1px solid var(--accent); color: var(--accent); padding: 0.5rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+        .experience-company { color: var(--text-secondary); font-weight: 600; margin-bottom: 1.5rem; font-size: 1rem; }
+        .experience-item ul { list-style: none; margin-top: 1.5rem; }
+        .experience-item li { padding: 0.8rem 0 0.8rem 2rem; color: var(--text-secondary); position: relative; line-height: 1.7; }
+        .experience-item li::before { content: "→"; position: absolute; left: 0; color: var(--success); font-weight: bold; }
+        .case-study-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+        .case-study { background: rgba(22, 27, 34, 0.6); border: 1px solid var(--dark-border); padding: 3rem; border-radius: 12px; transition: all 0.3s; }
+        .case-study:hover { border-color: var(--accent); background: rgba(22, 27, 34, 0.9); transform: translateY(-10px); }
+        .case-study h3 { font-size: 1.4rem; color: var(--accent); margin-bottom: 0.8rem; font-weight: 800; }
+        .case-study .period { color: var(--text-secondary); font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .case-study p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; }
+        .kpi-tags { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .kpi-tag { background: rgba(35, 134, 54, 0.1); border: 1px solid var(--success); color: var(--success); padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.85rem; }
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+        .edu-card { background: rgba(22, 27, 34, 0.6); border: 1px solid var(--dark-border); padding: 3rem; border-radius: 12px; transition: all 0.3s; }
+        .edu-card:hover { border-color: var(--accent); background: rgba(22, 27, 34, 0.9); transform: translateY(-10px); }
+        .edu-card h3 { font-size: 1.4rem; color: var(--accent); margin-bottom: 1rem; font-weight: 800; }
+        .edu-card p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.8rem; }
+        .status-badge { display: inline-block; background: rgba(35, 134, 54, 0.1); border: 1px solid var(--success); color: var(--success); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; font-size: 0.85rem; margin-top: 1rem; }
+        .cta-section { background: linear-gradient(135deg, rgba(0, 85, 204, 0.1) 0%, rgba(0, 119, 255, 0.1) 100%); border: 1px solid var(--dark-border); border-radius: 15px; padding: 6rem 4rem; text-align: center; margin: 5rem 0; }
+        .cta-section h2 { font-size: 2.8rem; margin-bottom: 1.5rem; font-weight: 900; }
+        .cta-section p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+        footer { background: rgba(13, 17, 23, 0.95); border-top: 1px solid var(--dark-border); padding: 4rem 0; text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .footer-links a:hover { color: var(--accent); }
+        footer p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.8rem; }
+        @media (max-width: 1200px) { .expertise-grid, .case-study-grid, .edu-grid { grid-template-columns: 1fr; } .summary-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 4rem; } .section-title { font-size: 2.5rem; } }
+        @media (max-width: 768px) { nav { gap: 1.5rem; font-size: 0.85rem; } .container { padding: 0 20px; } .hero h1 { font-size: 2.5rem; } .hero-subtitle { font-size: 1.2rem; } .section-title { font-size: 2rem; } .metrics-row { grid-template-columns: 1fr; } section { padding: 60px 0; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-logo">ASTITVA BHATT</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Digital Marketing <span class="accent">Executive</span></h1>
+                <p class="hero-subtitle">Data-Driven Growth Strategist | Analytics Specialist</p>
+                <p class="hero-description">Senior digital marketing professional with proven expertise in designing and executing high-impact campaigns across SaaS and FinTech sectors. Specializing in performance optimization, ROI maximization, and data-driven decision making.</p>
+                
+                <div class="cta-buttons">
+                    <a href="mailto:astitva.bhatt1@gmail.com" class="btn btn-primary">Get In Touch</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="metrics-row">
+                    <div class="metric">
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">Lead Generation Increase</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">2+</div>
+                        <div class="metric-label">Years Professional Experience</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">10+</div>
+                        <div class="metric-label">Core Competencies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Executive Summary</h2>
+            
+            <div class="executive-summary">
+                <div class="summary-grid">
+                    <div class="summary-text">
+                        <h3>Professional Profile</h3>
+                        <p>Results-oriented Digital Marketing Executive with demonstrable expertise in campaign strategy, performance analytics, and business intelligence. Currently expanding skillset into advanced data analytics with proficiency in SQL, Python, and BI platforms.</p>
+                        <ul class="summary-bullets">
+                            <li>40% improvement in lead generation metrics</li>
+                            <li>Multi-channel campaign management expertise</li>
+                            <li>Advanced data analytics and visualization</li>
+                            <li>ROI-focused optimization strategies</li>
+                            <li>Enterprise-level systems management</li>
+                        </ul>
+                    </div>
+                    <div class="summary-stats">
+                        <div class="summary-stat">
+                            <div class="value">40%</div>
+                            <div class="label">Performance Improvement</div>
+                        </div>
+                        <div class="summary-stat">
+                            <div class="value">$500K+</div>
+                            <div class="label">Budget Management</div>
+                        </div>
+                        <div class="summary-stat">
+                            <div class="value">3</div>
+                            <div class="label">Major Roles</div>
+                        </div>
+                        <div class="summary-stat">
+                            <div class="value">10+</div>
+                            <div class="label">Technical Skills</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise">
+        <div class="container">
+            <h2 class="section-title">Core Expertise</h2>
+            <p class="section-subtitle">Strategic capabilities spanning digital marketing strategy, performance analytics, and enterprise data management.</p>
+
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">💼</div>
+                    <h3>Digital Marketing Strategy</h3>
+                    <ul>
+                        <li>Campaign Strategy & Planning</li>
+                        <li>Google Ads Management</li>
+                        <li>Meta Ads Optimization</li>
+                        <li>Conversion Rate Optimization</li>
+                        <li>Lead Generation Excellence</li>
+                        <li>Performance Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">📊</div>
+                    <h3>Data Analytics & BI</h3>
+                    <ul>
+                        <li>SQL Database Management</li>
+                        <li>Excel Advanced Formulas</li>
+                        <li>Power BI Dashboards</li>
+                        <li>Tableau Visualization</li>
+                        <li>KPI Development</li>
+                        <li>Statistical Analysis</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">🎯</div>
+                    <h3>Enterprise Systems</h3>
+                    <ul>
+                        <li>ERP Implementation</li>
+                        <li>CRM Administration</li>
+                        <li>Google Analytics Setup</li>
+                        <li>Data Governance</li>
+                        <li>System Integration</li>
+                        <li>Process Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">Progressive career trajectory demonstrating increasing responsibility and measurable impact.</p>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>MIS Executive</h3>
+                        <div class="experience-company">ANG Manpower Solutions | Ahmedabad, Gujarat</div>
+                    </div>
+                    <span class="experience-badge">March 2026 – Present</span>
+                </div>
+                <ul>
+                    <li>Leading enterprise data management operations supporting 50+ daily transactions with 99.5% accuracy</li>
+                    <li>Designing real-time KPI dashboards using Excel and SQL for C-suite business intelligence</li>
+                    <li>Managing critical ERP and CRM systems supporting operations across 5 departments</li>
+                    <li>Implementing process improvements achieving 25% operational efficiency gains</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Digital Marketing Executive</h3>
+                        <div class="experience-company">INFOMIZER | Remote</div>
+                    </div>
+                    <span class="experience-badge">Oct 2024 – May 2025</span>
+                </div>
+                <ul>
+                    <li>Orchestrated multi-channel digital marketing campaigns achieving 40% lead generation uplift</li>
+                    <li>Managed $500K+ annual advertising budget with strategic optimization across Google and Meta platforms</li>
+                    <li>Implemented advanced A/B testing frameworks reducing cost-per-lead by 30%</li>
+                    <li>Developed performance dashboards using Google Analytics and Excel for stakeholder reporting</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Back-End Executive</h3>
+                        <div class="experience-company">Laps and Tabs Company | Lucknow, Uttar Pradesh</div>
+                    </div>
+                    <span class="experience-badge">Jul 2025 - Feb 2026</span>
+                </div>
+                <ul>
+                    <li>Managed high-precision data entry for government contracts maintaining 99.5% accuracy across 500+ records</li>
+                    <li>Monitored GeM portal bid status and tender management ensuring 100% compliance with deadlines</li>
+                    <li>Processed 200+ orders and tracked payments across multiple government contracts</li>
+                    <li>Coordinated cross-functional teams optimizing order-to-payment cycle efficiency</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Case Studies & Achievements</h2>
+            <p class="section-subtitle">Demonstrating strategic impact and measurable business results.</p>
+
+            <div class="case-study-grid">
+                <div class="case-study">
+                    <h3>📈 Multi-Channel Campaign Optimization</h3>
+                    <div class="period">June 2024 – August 2024 | INFOMIZER</div>
+                    <p>Designed and executed comprehensive digital marketing campaign across Google Ads and Meta platforms. Implem
